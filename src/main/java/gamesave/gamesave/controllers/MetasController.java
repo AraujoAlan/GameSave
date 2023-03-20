@@ -34,8 +34,8 @@ public class MetasController {
     @PostMapping("/api/metas")
     public ResponseEntity<Metas> create(@RequestBody Metas Metas){
         log.info("cadastrando meta: " + Metas);
-        Metas.setId(Metas.size() + 1l);
-        Metas.add(Metas);
+        Metas.setId(this.Metas.size() + 1l);
+        this.Metas.add(Metas);
         return ResponseEntity.status(HttpStatus.CREATED).body(Metas);
     }
 

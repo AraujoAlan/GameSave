@@ -35,8 +35,8 @@ public class CadastroController {
     @PostMapping("/api/cadastro")
     public ResponseEntity<Cadastro> create(@RequestBody Cadastro cadastro){
         log.info("cadastrando jogo: " + cadastro);
-        cadastro.setId(cadastro.size() + 1l);
-        cadastro.add(cadastro);
+        cadastro.setId(this.cadastro.size() + 1l);
+        this.cadastro.add(cadastro);
         return ResponseEntity.status(HttpStatus.CREATED).body(cadastro);
     }
 
